@@ -30,20 +30,20 @@ catalogo.push(new Productos("FIAMBRES", "JAMONES", "PALADINI", "PIEZA x 4 KG", 6
 catalogo.push(new Productos("FIAMBRES", "SALAMES", "CALCHAQUI", "PIEZA x 3 KG", 4800, true));
 catalogo.push(new Productos("FIAMBRES", "QUESOS", "SERENISIMA", "PIEZA x 5 KG", 5500, false));
 
-let pregunta = prompt("¿Desea ver el catalogo? \n SI/NO");
+let catalogoBebidas = catalogo.filter((el) => el.categoria.includes("BEBIDAS"))
+let catalogoFiambres = catalogo.filter((el) => el.categoria.includes("FIAMBRES"))
+let pregunta = prompt("¿QUE DESEA VER? \n 1-BEBIDAS \n 2-FIAMBRES");
 
-if (pregunta =="SI") {
-    for(let i = 0; i<= catalogo.length; i++){
-
-        alert(catalogo[i].mostrarDescripcion())
-     
+if (pregunta =="1") {
+  
+   for(let i = 0; i <= catalogoBebidas.length; i++){
+    alert(catalogoBebidas[i].mostrarDescripcion())
+   }
+}if (pregunta =="2"){
+    for(let i = 0; i<= catalogoFiambres.length; i++){
+        alert(catalogoFiambres[i].mostrarDescripcion())
     }
 }
 
-function mostrar(){
-    let mensaje="";
-    for(let i=0; i <= catalogo.length;i++){
-        mensaje+="\n"+catalogo[i].mostrarDescripcion();
-    }
-    return(mensaje);
-}
+
+
