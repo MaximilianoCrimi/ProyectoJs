@@ -12,7 +12,7 @@ class Productos{
      
 mostrarDescripcion(){
     
-    return this.categoria +  this.subCategoria + this.marca + this.presentacion + this.precio +this.stock;
+    return this.categoria + " "+ this.subCategoria + " " + this.marca +" Presentación: "+ this.presentacion + " $" + this.precio + " Stock: " + this.stock;
 }
 }
 
@@ -30,10 +30,14 @@ catalogo.push(new Productos("FIAMBRES", "JAMONES", "PALADINI", "PIEZA x 4 KG", 6
 catalogo.push(new Productos("FIAMBRES", "SALAMES", "CALCHAQUI", "PIEZA x 3 KG", 4800, true));
 catalogo.push(new Productos("FIAMBRES", "QUESOS", "SERENISIMA", "PIEZA x 5 KG", 5500, false));
 
-let pregunta = prompt("¿Qué producto desea ver? \n 1-BEBIDAS \n 2-FIAMBRES");
+let pregunta = prompt("¿Desea ver el catalogo? \n SI/NO");
 
-if (pregunta =="1") {
-    alert("catalogo: "  + catalogo.join("\n"))
+if (pregunta =="SI") {
+    for(let i = 0; i<= catalogo.length; i++){
+
+        alert(catalogo[i].mostrarDescripcion())
+     
+    }
 }
 
 function mostrar(){
