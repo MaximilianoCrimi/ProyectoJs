@@ -1,0 +1,13 @@
+header{
+    
+}
+
+header h1{
+    background-image: url("https://irp-cdn.multiscreensite.com/dd31d9a5/MOBILE/jpg/182777-banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 10%;
+    text-align: center;
+    padding-top: 10%;
+    border: solid 2px black;
+}
