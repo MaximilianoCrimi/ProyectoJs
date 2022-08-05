@@ -7,7 +7,12 @@ cambiarColor();
 function cambiarTitulo(){
 
         let tituloNuevo = prompt("Ingrese el nuevo titulo del proyecto");
-        titulo.innerText = tituloNuevo;
+        if (!tituloNuevo) {
+         alert("ingrese un texto valido");
+         cambiarTitulo();
+        }else{
+            titulo.innerText = tituloNuevo;
+        }
 }
 
 function cambiarColor(){
