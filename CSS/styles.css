@@ -11,3 +11,33 @@ header h1{
     padding-top: 10%;
     border: solid 2px black;
 }
+
+#productoCtn{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+}
+
+#productoCtn div{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #fff;
+    border: 5px solid #000;
+    border-radius: 10px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#productoCtn div img{
+    width: 40%;
+    justify-content: center;
+    align-self: center;
+}
+
+#productoCtn div button{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+}

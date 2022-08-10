@@ -1,13 +1,15 @@
 class Productos{
 
     
-    constructor(categoria, subCategoria, marca, presentacion, precio, stock){
+    constructor(id,categoria, subCategoria, marca, presentacion, precio, stock, imagen){
+        this.id = id;
         this.categoria = categoria;
         this.subCategoria = subCategoria; 
         this.marca = marca;
         this.presentacion = presentacion;
         this.precio = precio;
         this.stock = stock;
+        this.imagen = imagen;
     }
      
 mostrarDescripcion(){
@@ -126,7 +128,6 @@ function ingresarNuevoProducto (){
 
 
 }
-
 
 
 
