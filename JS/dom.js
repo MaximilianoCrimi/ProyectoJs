@@ -123,7 +123,7 @@ function clickAgregar(){
 
     let input = new Productos(id, categoria.value, subCategoria.value, marca.value, presentacion.value, precio.value, stock.value, imagen.value);
 
-
+    localStorage.input = JSON.stringify(input);
 
     catalogo.push(input);
 
