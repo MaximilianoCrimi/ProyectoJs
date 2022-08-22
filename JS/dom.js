@@ -34,6 +34,8 @@ getPresentacion(){
 
 window.onload = iniciar();
 
+//CREANDO Y AÑADIENDO OBJETOSS AL ARRAY
+
 let catalogo = new Array();
 
 catalogo.push(new Productos(1,"BEBIDAS", "GASEOSA", "COCA-COLA", "12 x 2,25 LT", 2500, true, "./img/cocacola225.jpg"));
@@ -49,17 +51,17 @@ catalogo.push(new Productos(10,"FIAMBRE", "MORTADELA", "PALADINI", "PIEZA X 5 KG
 catalogo.push(new Productos(11,"FIAMBRES", "FIAMBRIN", "SERENISIMA", "BARRA X 4 KG", 6200, true, "./img/fiambrin2.jpg"));
 catalogo.push(new Productos(12,"BEBIDAS", "VINO", "QUARA", "6 X 750 ML", 2520, true, "./img/quara.jpg"));
 
-
-
-
+localStorage.catalogo = JSON.stringify(catalogo);
+// CONTENEDOR PARA PRODUCTOS
 
 let productoCtn = document.getElementById("productoCtn");
 
 
 mostrarCaja();
 
-
+//FUNCION ENCARGADA DE RECORRER EL ARREGLO
 function mostrarCaja(){
+  JSON.parse(localStorage.catalogo);
 
     for(let i=0; i<= catalogo.length; i++){
 
@@ -67,6 +69,8 @@ function mostrarCaja(){
         crearCaja(objProducto);
     }
 }
+
+// FUNCION ENCARGADADE CREAR LA CAJA
 
 function crearCaja(producto){
     let ctn = document.createElement("div");
@@ -109,6 +113,8 @@ function iniciar(){
     boton.addEventListener("click", clickAgregar)
 }
 
+//FUNCION ENCARGADA DE TOMAR LOS VALORES DEL INPUT Y CREAR UN NUEVO OBJETO
+
 function clickAgregar(){
 
     let categoria = document.getElementById("categoria");
@@ -122,10 +128,8 @@ function clickAgregar(){
     let id = catalogo.length + 1;
 
     let input = new Productos(id, categoria.value, subCategoria.value, marca.value, presentacion.value, precio.value, stock.value, imagen.value);
-
-    localStorage.input = JSON.stringify(input);
-
     catalogo.push(input);
+    localStorage.input = JSON.stringify(input);
 
     crearCaja(input);
 
