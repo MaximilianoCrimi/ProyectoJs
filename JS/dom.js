@@ -62,7 +62,6 @@ mostrarCaja();
 //FUNCION ENCARGADA DE RECORRER EL ARREGLO
 function mostrarCaja(){
   JSON.parse(localStorage.catalogo);
-
     for(let i=0; i<= catalogo.length; i++){
 
         let objProducto =  catalogo[i];
@@ -94,7 +93,12 @@ function crearCaja(producto){
     productoCtn.appendChild(ctn);
 
     boton.addEventListener("click",() =>{
-        alert("añadido al carrito")
+        swal({
+            title: "Agregado al carrito",
+            text: "Gracias por su compra!",
+            button: "Continuar comprando",
+            icon: "success",
+          });
     })
 
     boton.addEventListener("click", ()=>{
@@ -126,11 +130,11 @@ function clickAgregar(){
     let imagen =  document.getElementById("imagen");
 
     let id = catalogo.length + 1;
+    
 
     let input = new Productos(id, categoria.value, subCategoria.value, marca.value, presentacion.value, precio.value, stock.value, imagen.value);
-    catalogo.push(input);
+    catalogo.push(input)
     localStorage.input = JSON.stringify(input);
-
     crearCaja(input);
 
 }
